@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<title>Form Validation></title>
+		
+		<link rel="stylesheet" type="text/css" href="jQuery2style.css">
+		
+		<script type="text/javascript" src="jquery-3.2.1.min.js"> </script>
+		
+	</head>
+	<body>
+			<h2> Form Validation </h2>
+			<div id="commonmsg" class="errormsg"></div>
+			<div id="wrapper">
+			<div class = "form_element">
+				<label for="email">Email</label>
+				<input type="text" id="email" placeholder="eg.yourname@gmail.com">
+				<div id="email_msg" class="errormsg" ></div>
+			</div>
+			<div class = "form_element">
+				<label for="phone">Telephone</label>
+				<input type="text" id="phone" placeholder="eg.0123456789">
+				<div id="phone_msg" class="errormsg"></div>
+			</div>
+			<div class = "form_element">
+				<label for="pwd">Password</label>
+				<input type="text" id="pwd" >
+				<div id="pwd_msg" class="errormsg"></div>
+			</div>
+			<div class = "form_element">
+				<label for="confirmpwd">Confirm Password</label>
+				<input type="text" id="confirmpwd" >
+				<div id="confirmpwd_msg" class="errormsg"></div>
+			</div>
+			<input type="submit" id="submit" value="Sign Up"></input>
+			</div>
+		<script type="text/javascript">
+			
+			function isemail(email){
+				var regex=/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				return regex.test(email);
+			}
+			$("#submit").click(function(){
+				var error=0;
+				var errormsg="";
+				var field="";
+				if($("#email").val()=="")
+					{
+						errormsg = "*your email address is missing";
+						error=1;
+						
+					}
+				else if(isemail($("#email").val())== false)
+					{
+						errormsg = "*your email address is not valid";
+						error=1;
+					}
+				if(error ==1)
+					{
+						$("#email_msg").html(errormsg);
+						$("#email").css("background-color","pink");
+						field+="<li>email</li>";
+					}
+				else {
+						$("#email").css("background-color","white");
+						$("#email_msg").hide();
+					 }
+				errormsg="";
+				error=0;
+				if($("#phone").val() == "")
+					{
+						errormsg = "*your phone number is missing";
+						error=1;
+					}
+					
+				else if ($.isNumeric($("#phone").val()) == false || $("#phone").val().length != 10 )
+					{
+						
+						errormsg = "*your phone number is not valid";
+						error=1;
+					}
+					if(error==1)
+						{
+							$("#phone_msg").html(errormsg);
+							$("#phone").css("background-color","pink");
+							field+="<li>phone</li>";
+						}
+					else 
+					{
+						$("#phone").css("background-color","white");
+						$("#phone_msg").hide();
+					 }
+					error=0;
+					
+				if($("#pwd").val() == "")
+					{
+						errormsg = "*your password is missing";
+						$("#pwd_msg").html(errormsg);
+						$("#pwd").css("background-color","pink");
+						error=1;
+						field+="<li>password</li>";
+					}
+				else
+					{
+						$("#pwd").css("background-color","white");
+						$("#pwd_msg").hide();
+					 }
+					
+				if($("#pwd").val() != $("#confirmpwd").val())
+					{
+						errormsg = "Your password doesn't match";
+						$("#confirmpwd_msg").html(errormsg);
+						$("#confirmpwd").css("background-color","pink");
+						error=1;
+						field+="<li>password not matching</li>";
+					}
+				else 
+					{
+						$("#confirmpwd").css("background-color","white");
+						$("#confirmpwd_msg").hide();
+					 }
+				if(error == 0)
+					{
+						$("#commonmsg").html("<p>Congratulations!! Your account has been created successfully</p>");
+						
+					}
+				else 
+					{
+						errormsg="The following field(s) those are marked red, either missing or not valid.";
+						
+						$("#commonmsg").html(errormsg+"<ul>"+field+"</ul>");
+					}
+				
+			});
+				
+			
+		
+	/*			if(typeof jQuery == "undefined")
+				alert("jQuery is not installed properly");
+			else
+				alert("jQuery is working properly");
+				
+	*/
+		</script>
+	</body>
+</html>

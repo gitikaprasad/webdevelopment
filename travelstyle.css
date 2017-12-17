@@ -1,0 +1,93 @@
+	
+	body{
+		font-family: "Courier New", Courier, monospace;
+	}
+	.navbar{
+		background-color:#CAC6FA;
+		font-weight:bold;
+		
+	}
+	
+	.jumbotron{
+		
+		background-repeat:no-repeat;
+		background-size:cover;
+		color:#29B6F6;
+		text-align:center;
+		text-weight:bold;
+		width:100%;
+			
+	}
+	#jumbo1{
+		background-image:url(travelimage1.jpg);
+		color:white;
+	}
+	#jumbo2{
+		background-image:url(travelimage6.jpg);
+		color:#29B6F6;
+	}
+	
+	#jumbo3{
+		background-image:url(travelimage2.jpg);
+		color:#F1C40F;
+	}
+	#jumbo4{
+		background-image:url(travelimage5.jpg);
+		color:#F1C40F;
+	}
+	#aboutus{
+		
+		margin:auto;
+		margin-bottom:30px;
+		width:400px;
+		height:200px;
+		border-left:2px solid black;
+		border-right:2px solid black;
+		padding-left: 20px;
+		padding-right:20px;
+		text-align:center;
+	}
+	#about{
+		color:blue;
+		text-decoration:underline;
+		font-weight:bold;
+	}
+	#gallery{
+		color:blue;
+		text-align:center;
+		margin-bottom:30px;
+		text-decoration:underline;
+		font-weight:bold;
+		
+	}
+	 body .btn-primary {
+    background-color: #9537DA;
+    border-color: #9537DA;
+    color: white; }
+    
+   body .btn-primary:hover, body .btn-primary:focus {
+      border-color: #6fb03a;
+      background-color: #6fb03a;
+       }
+	 .desc{
+		color:#37DA89; 
+		font-weight:bold;
+	 }
+	 #getin{
+		 text-decoration: underline;
+	 }
+	 #contact{
+		 color:#F52C2C;
+		  
+		 font-weight:bold;
+		 text-align:center; 
+	 }
+	 .toplink{
+		 width:30px;
+		 height:30px;
+	 }
+	 #phone{
+		 width:20px;
+		 height:20px;
+	 }
+	 
